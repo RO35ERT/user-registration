@@ -1,12 +1,89 @@
 *,
-::before
+::before,
 ::after{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+
 body{
   background-color: #f6f6f2;
-  padding: 0 20%;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+a:visited{
+  color: #f6f6f2;
+}
+
+a:hover{
+  filter: brightness(90%);
+}
+.navbar{
+  background-color: #388087;
+  padding: 20px;
+}
+.navbar ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  color: #f6f6f2;
+}
+
+.home,
+.add_user{
+  margin:  30px 20%;
+
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.9em;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: #388087;
+}
+
+.styled-table thead tr {
+  background-color: #388087;
+  color: #f6f6f2;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+/* Hover effect */
+.styled-table tbody tr:hover {
+  background-color: #e0e0e0;
 }

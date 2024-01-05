@@ -1,7 +1,11 @@
+import MyTable from "./MyTable";
+import UseFetch from "./useFetch";
+
 const Home = () => {
+    const users = UseFetch('http://127.0.0.1:3000/api/users');
     return ( 
         <div className="home">
-            Home
+            <MyTable data={first=>"Robert"}/>
         </div>
      );
 }
