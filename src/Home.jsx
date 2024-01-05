@@ -2,10 +2,10 @@ import MyTable from "./MyTable";
 import UseFetch from "./useFetch";
 
 const Home = () => {
-    const users = UseFetch('http://127.0.0.1:3000/api/users');
+    const {data:users,isPending,error} = UseFetch('http://127.0.0.1:3000/api/users');
     return ( 
         <div className="home">
-            <MyTable data={first=>"Robert"}/>
+            <MyTable data={users} status={isPending} error={error}/>
         </div>
      );
 }

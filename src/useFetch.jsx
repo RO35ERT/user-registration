@@ -2,17 +2,28 @@ import { useEffect, useState } from "react";
 
 const UseFetch = (url) => {
 
-    const [data, setDate] = useState();
+    const [data, setData] = useState();
     const [isPending, setPending] = useState(true);
     const [error, setError] = useState();
 
-    return ( 
-        useEffect(()=>{
-            fetch(url)
-            .then(response => response.json())
-            .then(data => console.log(data))
-        },[url])
-     );
+    useEffect(()=>{
+        fetch(url)
+        .then(response => {
+            setPending(true);
+            if(!(response.ok)){
+                throw Error("Could not fetch data");
+            }
+            return response.json()
+        })
+        .then(data => {
+            setData(data);
+            setPending(false)
+        }).catch(e=>{
+            setPending(false)
+            setError(e.message)
+        })
+    },[url])
+    return {data,isPending,error};
 }
  
 export default UseFetch;
